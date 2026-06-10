@@ -14,7 +14,7 @@ A multilingual AI-powered assistant for rural farmers in India, built with React
 
 \## ✨ Features
 
-\- 🌍 Multilingual support (7 Indian languages)
+\- 🌍 Multilingual support 
 
 \- 🌱 Crop disease diagnosis using AI
 
