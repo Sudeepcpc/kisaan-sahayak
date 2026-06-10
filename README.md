@@ -8,7 +8,7 @@ A multilingual AI-powered assistant for rural farmers in India, built with React
 
 \## 🔗 Live Demo
 
-👉 https://gen-lang-client-0948781324.web.app
+👉  https://kisaan-sahayak.web.app
 
 
 
