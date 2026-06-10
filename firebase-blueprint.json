@@ -1,0 +1,145 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Stores user points, badges, and progress.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "points": { "type": "integer" },
+        "badges": { "type": "array", "items": { "type": "string" } },
+        "lastActive": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "points"]
+    },
+    "CommunityPost": {
+      "title": "Community Post",
+      "description": "Forum posts created by farmers.",
+      "type": "object",
+      "properties": {
+        "authorId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "category": { "type": "string", "enum": ["Crops", "Health", "Village", "Urgent"] },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "likes": { "type": "integer" },
+        "commentsCount": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["authorId", "title", "content", "category"]
+    },
+    "Scheme": {
+      "title": "Government Scheme",
+      "description": "Information about government schemes.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "subsidy": { "type": "string" },
+        "applyUrl": { "type": "string" },
+        "category": { "type": "string" }
+      }
+    },
+    "SavedRecord": {
+      "title": "Saved Record",
+      "description": "User saved crop diagnoses.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "image": { "type": "string" },
+        "diagnosis": { "type": "string" },
+        "mode": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "image", "diagnosis"]
+    },
+    "ActivityLog": {
+      "title": "Activity Log",
+      "description": "User behavior logs representing action milestones.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "userName": { "type": "string" },
+        "type": { "type": "string" },
+        "details": { "type": "object" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "type", "timestamp"]
+    },
+    "HealthRecord": {
+      "title": "Health Record",
+      "description": "Private patient/family diagnostic consultation results.",
+      "type": "object",
+      "properties": {
+        "image": { "type": "string" },
+        "query": { "type": "string" },
+        "response": { "type": "string" },
+        "type": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["query", "response", "createdAt"]
+    },
+    "LivestockRecord": {
+      "title": "Livestock Record",
+      "description": "Veterinary diagnoses and care advice notes.",
+      "type": "object",
+      "properties": {
+        "image": { "type": "string" },
+        "query": { "type": "string" },
+        "response": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["query", "response", "createdAt"]
+    },
+    "JournalEntry": {
+      "title": "Farm Journal Entry",
+      "description": "Income/expense bookkeeping entries.",
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "enum": ["income", "expense"] },
+        "amount": { "type": "number" },
+        "note": { "type": "string" },
+        "category": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["type", "amount", "category", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profiles and rewards."
+    },
+    "/posts/{postId}": {
+      "schema": "CommunityPost",
+      "description": "Public community forum posts."
+    },
+    "/schemes/{schemeId}": {
+      "schema": "Scheme",
+      "description": "Available government schemes."
+    },
+    "/users/{userId}/records/{recordId}": {
+      "schema": "SavedRecord",
+      "description": "Private collection of saved crop diagnoses for a user."
+    },
+    "/activities/{activityId}": {
+      "schema": "ActivityLog",
+      "description": "Write-only stream of user telemetry metrics."
+    },
+    "/users/{userId}/health_records/{recordId}": {
+      "schema": "HealthRecord",
+      "description": "Private medical logs for a user."
+    },
+    "/users/{userId}/livestock_records/{recordId}": {
+      "schema": "LivestockRecord",
+      "description": "Private veterinary reports for a user's animals."
+    },
+    "/users/{userId}/journal_entries/{recordId}": {
+      "schema": "JournalEntry",
+      "description": "Bookkeeping records for farm finance."
+    }
+  }
+}

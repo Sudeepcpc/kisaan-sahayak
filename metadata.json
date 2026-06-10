@@ -1,0 +1,14 @@
+{
+  "name": "Kisaan Sahayak",
+  "description": "An AI-powered agricultural and health assistant for farmers, featuring crop diagnosis, symptom checking, and village utility services in local languages.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "multimodal vision diagnosis",
+    "voice-first interface",
+    "multilingual agricultural support"
+  ]
+}

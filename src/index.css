@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Lexend", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-bg: #FDFBF7;
+  --color-brand-green: #2D6A4F;
+  --color-brand-orange: #FF9F1C;
+  --color-brand-red: #E63946;
+  --color-brand-blue: #457B9D;
+  --color-brand-dark: #1B4332;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-dark);
+    -webkit-tap-highlight-color: transparent;
+  }
+}
