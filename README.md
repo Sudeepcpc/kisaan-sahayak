@@ -1,20 +1,62 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
-
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/456bea33-36e4-485a-83e9-ee6160e89609
-
-## Run Locally
-
-**Prerequisites:**  Node.js
+\# 🌾 Kisaan Sahayak - AI Agricultural Assistant
 
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+
+A multilingual AI-powered assistant for rural farmers in India, built with React, Firebase, and Google Gemini AI.
+
+
+
+\## 🔗 Live Demo
+
+👉 https://gen-lang-client-0948781324.web.app
+
+
+
+\## ✨ Features
+
+\- 🌍 Multilingual support (7 Indian languages)
+
+\- 🌱 Crop disease diagnosis using AI
+
+\- 🐄 Livestock health guidance
+
+\- 📰 Latest agriculture news
+
+\- 💬 Community forum for farmers
+
+\- 📍 Field locator with maps
+
+\- 📊 Mandi prices tracker
+
+\- 🗓️ Farm journal
+
+
+
+\## 🛠️ Tech Stack
+
+\- React + TypeScript + Vite
+
+\- Firebase (Firestore, Hosting, Auth)
+
+\- Google Gemini AI API
+
+\- Voice input support
+
+
+
+\## 🚀 Run Locally
+
+1\. Clone the repo
+
+2\. Run `npm install`
+
+3\. Add your `GEMINI\_API\_KEY` in `.env`
+
+4\. Run `npm run dev`
+
+
+
+\## 👨‍💻 Developer
+
+Built by Sudeep C P — CSE Graduate, PES Institute of Technology and Management
+
